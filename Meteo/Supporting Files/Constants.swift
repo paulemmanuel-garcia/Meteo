@@ -9,13 +9,13 @@
 import Foundation
 
 let domain: String = "com.rstudio.Meteo"
+let iconBaseUrl: String = "http://openweathermap.org/img/w/"
 
-/// <#Description#>
+/// Enum grouping general error code
 ///
-/// - urlCreation: <#urlCreation description#>
-/// - noData: <#noData description#>
+/// - urlCreation: Error when trying to create an URL from a String
+/// - noData: No data retrieved from network call
 enum GenericError: Int {
     case urlCreation = 1
     case noData = 2
-    
 }

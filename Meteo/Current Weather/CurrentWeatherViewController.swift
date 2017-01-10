@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageLoader
 
 public class CurrentWeatherViewController: UIViewController, UIWeatherElement {
     
@@ -17,13 +18,15 @@ public class CurrentWeatherViewController: UIViewController, UIWeatherElement {
         set {
             _currentWeather = newValue
             
-            if let temp = newValue?.temp {
-                tempLabel.text = "\(temp)"
-            } else {
-                tempLabel.text = "No temperature available"
+            guard let weather = newValue else {
+                return
             }
+            
+            tempLabel.text = "\(weather.temp)"
 
-            conditionLabel.text = newValue?.conditions.first?.description
+            conditionLabel.text = weather.conditions.first?.description
+            
+            iconImageView.load(with: iconBaseUrl + (weather.conditions.first?.icon ?? "01d") + ".png")
         }
         get {
             return _currentWeather
@@ -33,6 +36,7 @@ public class CurrentWeatherViewController: UIViewController, UIWeatherElement {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
     
     override public func viewDidLoad() {
         super.viewDidLoad()

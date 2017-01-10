@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import ImageLoader
 
 class ForecastTableViewCell: UITableViewCell {
     
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
     
     private var _dayWeather: DayWeather?
     public var dayWeather: DayWeather? {
@@ -20,13 +22,14 @@ class ForecastTableViewCell: UITableViewCell {
         }
         set {
             _dayWeather = newValue
-            dateLabel.text = _dayWeather?.date.format(as: "dd/MM") ?? ""
-            
-            if let temp = _dayWeather?.temp {
-                tempLabel.text = "\(temp)"
-            } else {
-                tempLabel.text = "No temperature available"
+            guard let weather = newValue else {
+                return
             }
+            
+            dateLabel.text = weather.date.format(as: "dd/MM")
+
+            tempLabel.text = "\(weather.temp)"
+            iconImageView.load(with: iconBaseUrl + (weather.conditions.first?.icon ?? "01d") + ".png")
         }
     }
     
@@ -41,4 +44,8 @@ class ForecastTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    override func prepareForReuse() {
+        iconImageView.image = nil
+    }
 }

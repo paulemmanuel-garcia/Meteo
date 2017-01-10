@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -85,14 +86,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bl6-Je-3Fg">
+                                <rect key="frame" x="238" y="33" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bl6-Je-3Fg" secondAttribute="height" multiplier="1:1" id="2zZ-Nf-rS3"/>
+                                    <constraint firstAttribute="width" constant="34" id="HVB-zv-SyB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bl6-Je-3Fg" firstAttribute="leading" secondItem="fql-aU-dTW" secondAttribute="trailing" constant="30" id="1mt-E5-VaI"/>
                             <constraint firstItem="fql-aU-dTW" firstAttribute="centerX" secondItem="QjK-R9-9aP" secondAttribute="centerX" id="7XB-jg-sJV"/>
                             <constraint firstItem="izM-cE-u8b" firstAttribute="centerX" secondItem="QjK-R9-9aP" secondAttribute="centerX" id="9hC-BL-ANe"/>
                             <constraint firstItem="rbf-KT-jJt" firstAttribute="centerX" secondItem="QjK-R9-9aP" secondAttribute="centerX" id="MXW-XD-5OP"/>
                             <constraint firstItem="izM-cE-u8b" firstAttribute="top" secondItem="QjK-R9-9aP" secondAttribute="top" constant="10" id="QUZ-zS-6ix"/>
                             <constraint firstItem="rbf-KT-jJt" firstAttribute="top" secondItem="fql-aU-dTW" secondAttribute="bottom" constant="15" id="cAl-xn-npe"/>
+                            <constraint firstItem="bl6-Je-3Fg" firstAttribute="bottom" secondItem="fql-aU-dTW" secondAttribute="bottom" id="jxI-PY-tj0"/>
                             <constraint firstItem="fql-aU-dTW" firstAttribute="top" secondItem="izM-cE-u8b" secondAttribute="bottom" constant="15" id="n20-Af-pXH"/>
                         </constraints>
                     </view>
@@ -101,6 +111,7 @@
                     <connections>
                         <outlet property="cityLabel" destination="izM-cE-u8b" id="b8R-SL-aGc"/>
                         <outlet property="conditionLabel" destination="fql-aU-dTW" id="7Ba-gs-Nz0"/>
+                        <outlet property="iconImageView" destination="bl6-Je-3Fg" id="3nC-WZ-hKT"/>
                         <outlet property="tempLabel" destination="rbf-KT-jJt" id="ajR-pZ-KRd"/>
                     </connections>
                 </viewController>
@@ -143,16 +154,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Yp-CD-xBU">
+                                                    <rect key="frame" x="139" y="5" width="34" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="34" id="FmE-Qm-b3M"/>
+                                                        <constraint firstAttribute="width" secondItem="9Yp-CD-xBU" secondAttribute="height" multiplier="1:1" id="MI6-Dz-vpw"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bT9-K6-lLL" firstAttribute="leading" secondItem="Tsb-zx-fjj" secondAttribute="trailing" constant="30" id="7EI-2A-Z8l"/>
+                                                <constraint firstItem="9Yp-CD-xBU" firstAttribute="leading" secondItem="bT9-K6-lLL" secondAttribute="trailing" constant="10" id="Rfe-1D-tSN"/>
                                                 <constraint firstItem="Tsb-zx-fjj" firstAttribute="leading" secondItem="7Nv-Lp-hlb" secondAttribute="leading" constant="15" id="fcA-PK-Nok"/>
                                                 <constraint firstItem="Tsb-zx-fjj" firstAttribute="centerY" secondItem="7Nv-Lp-hlb" secondAttribute="centerY" id="gt8-WC-zE9"/>
                                                 <constraint firstItem="bT9-K6-lLL" firstAttribute="centerY" secondItem="Tsb-zx-fjj" secondAttribute="centerY" id="lVo-KJ-4xx"/>
+                                                <constraint firstItem="9Yp-CD-xBU" firstAttribute="centerY" secondItem="7Nv-Lp-hlb" secondAttribute="centerY" id="sj8-p8-S2S"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="Tsb-zx-fjj" id="HSG-ri-8D0"/>
+                                            <outlet property="iconImageView" destination="9Yp-CD-xBU" id="kF4-5z-SaY"/>
                                             <outlet property="tempLabel" destination="bT9-K6-lLL" id="MSP-VK-mhE"/>
                                         </connections>
                                     </tableViewCell>

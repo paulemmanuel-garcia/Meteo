@@ -29,6 +29,10 @@
 		81C111C21E240C1100DB54B8 /* DayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C111AF1E23FFAC00DB54B8 /* DayWeather.swift */; };
 		81DA14801E24F39A0007EE07 /* Date+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA147F1E24F39A0007EE07 /* Date+Calendar.swift */; };
 		81DA14821E24FB9D0007EE07 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA14811E24FB9D0007EE07 /* ForecastTableViewCell.swift */; };
+		81DA14841E24FFD50007EE07 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 81DA14831E24FFD50007EE07 /* Cartfile */; };
+		81DA14861E2500650007EE07 /* ImageLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DA14851E2500650007EE07 /* ImageLoader.framework */; };
+		81DA14871E2502560007EE07 /* ImageLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DA14851E2500650007EE07 /* ImageLoader.framework */; };
+		81DA14881E2502560007EE07 /* ImageLoader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81DA14851E2500650007EE07 /* ImageLoader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,20 @@
 			remoteInfo = Meteo;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		81DA14891E2502560007EE07 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				81DA14881E2502560007EE07 /* ImageLoader.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		817D155A1E242DD80061C197 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "Supporting Files/Constants.swift"; sourceTree = "<group>"; };
@@ -67,6 +85,8 @@
 		81C111C01E240B2600DB54B8 /* DayWeather_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayWeather_Tests.swift; sourceTree = "<group>"; };
 		81DA147F1E24F39A0007EE07 /* Date+Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Calendar.swift"; path = "Supporting Files/Date+Calendar.swift"; sourceTree = "<group>"; };
 		81DA14811E24FB9D0007EE07 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForecastTableViewCell.swift; path = Forecast/ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		81DA14831E24FFD50007EE07 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		81DA14851E2500650007EE07 /* ImageLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageLoader.framework; path = Meteo/Carthage/Build/iOS/ImageLoader.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81DA14871E2502560007EE07 /* ImageLoader.framework in Frameworks */,
+				81DA14861E2500650007EE07 /* ImageLoader.framework in Frameworks */,
 				817D15601E243F9C0061C197 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +113,7 @@
 		817D155E1E243F9C0061C197 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81DA14851E2500650007EE07 /* ImageLoader.framework */,
 				817D155F1E243F9C0061C197 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
@@ -143,6 +166,7 @@
 		81C111A11E23F89300DB54B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				81DA14831E24FFD50007EE07 /* Cartfile */,
 				81C111951E23F45400DB54B8 /* Assets.xcassets */,
 				81C111971E23F45400DB54B8 /* LaunchScreen.storyboard */,
 				81C1119A1E23F45400DB54B8 /* Info.plist */,
@@ -201,6 +225,7 @@
 				81C111871E23F45400DB54B8 /* Sources */,
 				81C111881E23F45400DB54B8 /* Frameworks */,
 				81C111891E23F45400DB54B8 /* Resources */,
+				81DA14891E2502560007EE07 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,6 +303,7 @@
 			files = (
 				81C111991E23F45400DB54B8 /* LaunchScreen.storyboard in Resources */,
 				81C111961E23F45400DB54B8 /* Assets.xcassets in Resources */,
+				81DA14841E24FFD50007EE07 /* Cartfile in Resources */,
 				81C111941E23F45400DB54B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +478,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 22RKU6KF4G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Meteo/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Meteo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -466,6 +496,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 22RKU6KF4G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Meteo/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Meteo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
