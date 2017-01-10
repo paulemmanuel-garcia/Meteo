@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         performSegue(withIdentifier: "Detail", sender: self)
+        performSegue(withIdentifier: "Forecast", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

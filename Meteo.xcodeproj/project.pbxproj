@@ -27,6 +27,8 @@
 		81C111B91E240AEF00DB54B8 /* Meteo_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C111B81E240AEF00DB54B8 /* Meteo_Tests.swift */; };
 		81C111C11E240B2600DB54B8 /* DayWeather_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C111C01E240B2600DB54B8 /* DayWeather_Tests.swift */; };
 		81C111C21E240C1100DB54B8 /* DayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C111AF1E23FFAC00DB54B8 /* DayWeather.swift */; };
+		81DA14801E24F39A0007EE07 /* Date+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA147F1E24F39A0007EE07 /* Date+Calendar.swift */; };
+		81DA14821E24FB9D0007EE07 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA14811E24FB9D0007EE07 /* ForecastTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		81C111B81E240AEF00DB54B8 /* Meteo_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteo_Tests.swift; sourceTree = "<group>"; };
 		81C111BA1E240AEF00DB54B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81C111C01E240B2600DB54B8 /* DayWeather_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayWeather_Tests.swift; sourceTree = "<group>"; };
+		81DA147F1E24F39A0007EE07 /* Date+Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Calendar.swift"; path = "Supporting Files/Date+Calendar.swift"; sourceTree = "<group>"; };
+		81DA14811E24FB9D0007EE07 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForecastTableViewCell.swift; path = Forecast/ForecastTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 				81C1119A1E23F45400DB54B8 /* Info.plist */,
 				817D155A1E242DD80061C197 /* Constants.swift */,
 				817D155C1E243F120061C197 /* Reachability.swift */,
+				81DA147F1E24F39A0007EE07 /* Date+Calendar.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				81C111A21E23F92D00DB54B8 /* ForecastViewController.swift */,
+				81DA14811E24FB9D0007EE07 /* ForecastTableViewCell.swift */,
 			);
 			name = Forecast;
 			sourceTree = "<group>";
@@ -295,6 +301,8 @@
 				81C111B01E23FFAC00DB54B8 /* DayWeather.swift in Sources */,
 				81C111911E23F45400DB54B8 /* MainViewController.swift in Sources */,
 				81C1118F1E23F45400DB54B8 /* AppDelegate.swift in Sources */,
+				81DA14801E24F39A0007EE07 /* Date+Calendar.swift in Sources */,
+				81DA14821E24FB9D0007EE07 /* ForecastTableViewCell.swift in Sources */,
 				81C111AE1E23FC0000DB54B8 /* CurrentWeather.swift in Sources */,
 				81C111A31E23F92D00DB54B8 /* ForecastViewController.swift in Sources */,
 				81C111AC1E23FBD500DB54B8 /* Forecast.swift in Sources */,

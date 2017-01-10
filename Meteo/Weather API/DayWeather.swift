@@ -44,23 +44,6 @@ public struct Condition: WeatherElement {
         let result = JSON.map { return Condition(with: $0) }.flatMap { $0 }
         return result.count > 0 ? result : nil
     }
-    
-//    public required init?(coder aDecoder: NSCoder) {
-//        guard let description = aDecoder.decodeObject(forKey: "description") as? String,
-//            let icon = aDecoder.decodeObject(forKey: "icon") as? String else {
-//                return nil
-//        }
-//        
-//        self.id = Int(aDecoder.decodeInt64(forKey: "id"))
-//        self.description = description
-//        self.icon = icon
-//    }
-//    
-//    public func encode(with aCoder: NSCoder) {
-//        aCoder.encode(id, forKey: "id")
-//        aCoder.encode(description, forKey: "description")
-//        aCoder.encode(icon, forKey: "icon")
-//    }
 }
 
 /// Represent a single day of weather.
@@ -98,21 +81,12 @@ public struct DayWeather: WeatherElement {
         self.date = Date(timeIntervalSince1970: timeInterval)
     }
     
-//    required public init?(coder aDecoder: NSCoder) {
-//        guard let conditions = aDecoder.decodeObject(forKey: "conditions") as? [Condition] else {
-//                return nil
-//        }
-//
-//        self.tempMax = aDecoder.decodeDouble(forKey: "tempMax")
-//        self.temp = aDecoder.decodeDouble(forKey: "temp")
-//        self.tempMin = aDecoder.decodeDouble(forKey: "tempMin")
-//        self.conditions = conditions
-//    }
-//    
-//    public func encode(with aCoder: NSCoder) {
-//        aCoder.encode(temp, forKey: "temp")
-//        aCoder.encode(tempMin, forKey: "tempMin")
-//        aCoder.encode(tempMax, forKey: "tempMax")
-//        aCoder.encode(conditions, forKey: "conditions")
-//    }
+    fileprivate init(temp: Double, tempMin: Double, tempMax: Double, conditions: [Condition], date: Date) {
+        self.temp = temp
+        self.tempMin = tempMin
+        self.tempMax = tempMax
+        self.conditions = conditions
+        self.date = date
+        
+    }
 }

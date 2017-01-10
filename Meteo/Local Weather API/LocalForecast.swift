@@ -10,7 +10,6 @@ import Foundation
 
 extension Forecast: LocalWeatherElement {
     func serialize() -> [String: Any] {
-        return [
-        :]
+        return ["list": days.map { $0.serialize() }]
     }
 }
