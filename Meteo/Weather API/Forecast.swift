@@ -10,8 +10,12 @@ import Foundation
 
 public struct Forecast {
     
+    /// Days forecasted
     var days: [DayWeather]
     
+    /// Custom init.
+    /// Instanciation from the API.
+    /// Return nil if the Condition could not be well created.
     public init?(with JSON: [String: Any]) {
         guard let list = JSON["list"] as? [[String: Any]] else {
             return nil
