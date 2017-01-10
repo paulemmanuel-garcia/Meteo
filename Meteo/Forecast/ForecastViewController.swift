@@ -26,14 +26,16 @@ public class ForecastViewController: UIViewController, UIWeatherElement {
         Weather.api.getForecast(for: city) {
             forecast, error in
             self.forecast = forecast
-            self.tableView.reloadData()
+            if let _ = forecast {
+                self.tableView.reloadData()
+            }
         }
     }
     
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }    
+    }
 }
 
 extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
@@ -45,9 +47,9 @@ extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DayWeather") as? ForecastTableViewCell else {
             return UITableViewCell()
         }
-
+        
         cell.dayWeather = forecast!.days[indexPath.row]
-
+        
         return cell
     }
 }
