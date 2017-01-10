@@ -41,8 +41,8 @@ public struct Condition: WeatherElement {
     /// - Parameter JSON: Data from the API.
     /// - Returns: Array of conditions or nil.
     public static func create(contidions JSON: [[String: Any]]) -> [Condition]? {
-        let result = JSON.map { return Condition(with: $0) }.filter { $0 != nil }
-        return result.count > 0 ? (result as? [Condition]) : nil
+        let result = JSON.map { return Condition(with: $0) }.flatMap { $0 }
+        return result.count > 0 ? result : nil
     }
     
 //    public required init?(coder aDecoder: NSCoder) {
@@ -78,20 +78,24 @@ public struct DayWeather: WeatherElement {
     /// Day's conditions
     public var conditions: [Condition]
     
+    public var date: Date
+    
     /// Custom init.
     /// Instanciation from the API.
     /// Return nil if the Condition could not be well created.
     public init?(with JSON: [String: Any]) {
         guard let main = JSON["main"] as? [String: Any], let temp = main["temp"] as? Double,
             let tempMin = main["temp_min"] as? Double, let tempMax = main["temp_max"] as? Double,
+            let timeInterval = JSON["dt"] as? TimeInterval,
             let weather = JSON["weather"] as? [[String: Any]], let conditions = Condition.create(contidions: weather) else {
                 return nil
         }
-        
+
         self.temp = temp
         self.tempMin = tempMin
         self.tempMax = tempMax
         self.conditions = conditions
+        self.date = Date(timeIntervalSince1970: timeInterval)
     }
     
 //    required public init?(coder aDecoder: NSCoder) {

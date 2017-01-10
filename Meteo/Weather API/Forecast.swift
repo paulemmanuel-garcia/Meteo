@@ -9,5 +9,14 @@
 import Foundation
 
 public struct Forecast {
-    public init?(with JSON: [String: Any]) {}
+    
+//    var days: [DayWeather]
+    
+    public init?(with JSON: [String: Any]) {
+//        guard let list = JSON["list"] as? [[String: Any]] else {
+//            return nil
+//        }
+        
+        
+    }
 }

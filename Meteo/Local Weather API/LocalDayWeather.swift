@@ -22,9 +22,6 @@ extension Condition: LocalWeatherElement {
 }
 
 extension DayWeather: LocalWeatherElement {
-    static func get(with city: String) {
-    }
-    
     func serialize() -> [String: Any] {
         return [
             "main": [
@@ -32,6 +29,7 @@ extension DayWeather: LocalWeatherElement {
                 "temp_min": tempMin,
                 "temp_max": tempMax,
             ],
+            "dt": date.timeIntervalSince1970,
             "weather": conditions.map { $0.serialize() }
         ]
     }

@@ -9,10 +9,6 @@
 import Foundation
 
 extension Forecast: LocalWeatherElement {
-    static func get(with city: String) {
-        
-    }
-
     func serialize() -> [String: Any] {
         return [
         :]
