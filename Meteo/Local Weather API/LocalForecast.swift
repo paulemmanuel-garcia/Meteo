@@ -13,6 +13,8 @@ extension Forecast: LocalWeatherElement {
         
     }
 
-    func save() {
+    func serialize() -> [String: Any] {
+        return [
+        :]
     }
 }

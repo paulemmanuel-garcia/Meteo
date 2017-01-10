@@ -9,5 +9,5 @@
 import Foundation
 
 public struct Forecast {
-
+    public init?(with JSON: [String: Any]) {}
 }

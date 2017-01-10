@@ -9,8 +9,8 @@
 import Foundation
 
 /// Represent the condition of the weather.
-public struct Condition {
-
+public struct Condition: WeatherElement {
+    
     /// Conditions's Id
     public var id: Int
     
@@ -33,7 +33,7 @@ public struct Condition {
         self.description = description
         self.icon = icon
     }
-
+    
     /// Method to handle multiple conditions creation.
     /// The method return nil if no condition could have been created.
     /// If one condition could have been created we return a valid array.
@@ -44,10 +44,27 @@ public struct Condition {
         let result = JSON.map { return Condition(with: $0) }.filter { $0 != nil }
         return result.count > 0 ? (result as? [Condition]) : nil
     }
+    
+//    public required init?(coder aDecoder: NSCoder) {
+//        guard let description = aDecoder.decodeObject(forKey: "description") as? String,
+//            let icon = aDecoder.decodeObject(forKey: "icon") as? String else {
+//                return nil
+//        }
+//        
+//        self.id = Int(aDecoder.decodeInt64(forKey: "id"))
+//        self.description = description
+//        self.icon = icon
+//    }
+//    
+//    public func encode(with aCoder: NSCoder) {
+//        aCoder.encode(id, forKey: "id")
+//        aCoder.encode(description, forKey: "description")
+//        aCoder.encode(icon, forKey: "icon")
+//    }
 }
 
 /// Represent a single day of weather.
-public struct DayWeather {
+public struct DayWeather: WeatherElement {
     
     /// Day's celcius temperature
     public var temp: Double
@@ -60,7 +77,7 @@ public struct DayWeather {
     
     /// Day's conditions
     public var conditions: [Condition]
-
+    
     /// Custom init.
     /// Instanciation from the API.
     /// Return nil if the Condition could not be well created.
@@ -70,10 +87,28 @@ public struct DayWeather {
             let weather = JSON["weather"] as? [[String: Any]], let conditions = Condition.create(contidions: weather) else {
                 return nil
         }
-
+        
         self.temp = temp
         self.tempMin = tempMin
         self.tempMax = tempMax
         self.conditions = conditions
     }
+    
+//    required public init?(coder aDecoder: NSCoder) {
+//        guard let conditions = aDecoder.decodeObject(forKey: "conditions") as? [Condition] else {
+//                return nil
+//        }
+//
+//        self.tempMax = aDecoder.decodeDouble(forKey: "tempMax")
+//        self.temp = aDecoder.decodeDouble(forKey: "temp")
+//        self.tempMin = aDecoder.decodeDouble(forKey: "tempMin")
+//        self.conditions = conditions
+//    }
+//    
+//    public func encode(with aCoder: NSCoder) {
+//        aCoder.encode(temp, forKey: "temp")
+//        aCoder.encode(tempMin, forKey: "tempMin")
+//        aCoder.encode(tempMax, forKey: "tempMax")
+//        aCoder.encode(conditions, forKey: "conditions")
+//    }
 }
